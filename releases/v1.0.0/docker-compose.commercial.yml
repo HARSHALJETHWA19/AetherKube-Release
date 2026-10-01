@@ -1,0 +1,58 @@
+# AetherKube — Customer Commercial Distribution v1.0.0
+# Deploy on any server, workstation, or private cloud with Docker & Docker Compose.
+# Out-of-the-box Free Edition (1 cluster, 50 AI queries/mo, diagnostics, remediation).
+# To activate a paid Pro/Max subscription, pass AETHERKUBE_LICENSE_KEY or activate via UI.
+
+services:
+  aetherkube-backend:
+    image: aetherkube/backend:1.0.0
+    container_name: aetherkube-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - REDIS_URL=redis://aetherkube-redis:6379/0
+      - AETHERKUBE_DATA_DIR=/app/data
+      - AETHERKUBE_LICENSE_KEY=${AETHERKUBE_LICENSE_KEY:-}
+      - JWT_SECRET=${JWT_SECRET:-aetherkube-commercial-jwt-2026}
+      - AETHERKUBE_LICENSE_SECRET=${AETHERKUBE_LICENSE_SECRET:-aetherkube-core-enterprise-salt-2026}
+      - TESTING=0
+    volumes:
+      - aetherkube_data:/app/data
+      - ~/.kube:/root/.kube:ro
+    networks:
+      default:
+        aliases:
+          - backend
+          - aetherkube-backend
+    depends_on:
+      aetherkube-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  aetherkube-redis:
+    image: redis:7-alpine
+    container_name: aetherkube-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - aetherkube_redis:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  aetherkube_data:
+    name: aetherkube_data
+  aetherkube_redis:
+    name: aetherkube_redis

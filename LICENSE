@@ -1,0 +1,84 @@
+AetherKube Commercial Software License
+Version 1.0 — October 2026
+
+Copyright (c) 2026 AetherKube Systems Inc.
+All rights reserved.
+
+IMPORTANT: READ CAREFULLY BEFORE INSTALLING, COPYING, OR USING THIS SOFTWARE.
+
+This AetherKube Software License Agreement ("Agreement") is a legal agreement between
+you (either an individual or a legal entity, "Licensee") and AetherKube Systems Inc.
+("AetherKube") for the AetherKube software product identified above ("Software").
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE
+TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS, DO NOT INSTALL OR USE THE
+SOFTWARE.
+
+1. GRANT OF LICENSE
+
+Subject to the terms of this Agreement, AetherKube grants Licensee a non-exclusive,
+non-transferable, limited license to:
+
+  (a) Install and use the Software on machines owned or controlled by Licensee,
+      subject to the tier and cluster limits of the edition activated;
+  (b) Make copies of the Software for backup purposes only.
+
+2. EDITIONS
+
+The Software is made available in the following editions:
+
+  Free Edition:     1 cluster, 50 AI queries/month, basic diagnostics
+  Pro Edition:      Unlimited clusters, unlimited AI queries, advanced features
+  Max Edition:      All Pro features, enterprise compliance and multi-tenancy
+
+Features and limits are enforced by the license system embedded in the Software.
+
+3. RESTRICTIONS
+
+Licensee may NOT:
+
+  (a) Reverse engineer, decompile, or disassemble the Software;
+  (b) Modify, adapt, translate, or create derivative works;
+  (c) Sublicense, sell, rent, lease, or transfer the Software;
+  (d) Remove or alter any proprietary notices or labels;
+  (e) Use the Software to build a competing product;
+  (f) Circumvent or disable the license enforcement mechanisms.
+
+4. PRIVATE BETA
+
+v1.0.0 is distributed as a Private Beta. AetherKube may modify features, limits, and
+terms before general availability. Licensee acknowledges that the Software may contain
+bugs and agrees to provide feedback to AetherKube.
+
+5. DATA AND PRIVACY
+
+The Software is a local-first, self-hosted platform. It does not transmit Kubernetes
+credentials, cluster data, or operational telemetry to AetherKube's servers without
+explicit Licensee configuration. AI Copilot features require Licensee-supplied API keys
+(BYOK) and communicate directly with the respective AI provider.
+
+6. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+AETHERKUBE DISCLAIMS ALL WARRANTIES INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL AETHERKUBE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING FROM USE OF THE SOFTWARE.
+
+8. TERMINATION
+
+This license terminates automatically if Licensee breaches any term. Upon termination,
+Licensee must destroy all copies of the Software.
+
+9. GOVERNING LAW
+
+This Agreement is governed by applicable law. Any disputes shall be resolved through
+binding arbitration.
+
+---
+
+For licensing inquiries: support@aetherkube.io
+Copyright (c) 2026 AetherKube Systems Inc. All rights reserved.
